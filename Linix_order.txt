@@ -1,0 +1,22 @@
+sudo chmod  -R 777 /var/www
+777  读写执行
+666  可读和写
+
+umask
+
+
+apt 
+
+apt update
+apt list --upgradable = apt list -u
+apt upgrade //全更新
+apt-mark hold + 软件包	// upgrade不更新但install可以更新
+apt-mark unhold + 软件包
+
+
+离线包安装 	dpkg
+dpkg -i + 软件包	//安装
+dpkg-deb -c + 软件包	//查看DEB包内容
+
+
+

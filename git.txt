@@ -1,0 +1,103 @@
+
+创建仓库命令
+下表列出了 git 创建仓库的命令：
+
+命令		说明
+git init	初始化仓库
+git clone	拷贝一份远程仓库，也就是下载一个项目。
+
+
+
+
+提交与修改
+Git 的工作就是创建和保存你的项目的快照及与之后的快照进行对比。
+下表列出了有关创建与提交你的项目的快照的命令：
+
+命令		说明
+git add		添加文件到暂存区
+git status	查看仓库当前的状态，显示有变更的文件。
+git diff	比较文件的不同，即暂存区和工作区的差异。
+git commit	提交暂存区到本地仓库。
+git reset	回退版本。
+git rm		将文件从暂存区和工作区中删除。
+git mv		移动或重命名工作区文件。
+git checkout	分支切换。
+git switch 	(Git 2.23 版本引入）	更清晰地切换分支。
+git branch	-b 创建分支  -d 删除分支
+git merge 	合并分支	禁用快速合并 --no-ff -m '注释' bug分支使用，体现BUG修复记录
+git restore 	(Git 2.23 版本引入）	恢复或撤销文件的更改。
+git stash 	储藏工作现场	git stash list 显示保存的现场  	~ pop 恢复现场
+
+提交日志
+命令		说明
+git log		查看历史提交记录
+git blame <file>	以列表形式查看指定文件的历史修改记录
+
+远程操作
+命令	说明
+git remote	远程仓库操作
+git fetch	从远程获取代码库
+git pull	下载远程代码并合并
+git push	上传远程代码并合并
+
+
+
+git log --pretty=oneline
+
+git log --oneline
+
+git log --graph --pretty=oneline
+
+
+git config  --global user.name "username"
+git config  --global user.email "username@email.com"
+
+ssh 公钥：
+ssh-keygen -t rsa -C 'username@email.com'
+
+
+git clone 失败运行：
+eval "$(ssh-aqent -s)"
+ssh-add
+
+提交分支
+git push origin <分支名称>
+
+
+
+
+1. 在gitee或者github上创建一个新仓库
+仓库
+
+2. 在控制台进入本地已有的项目文件夹下
+cd myapp
+3.在myapp文件夹根目录之行git init
+git init
+这时候可以看到文件夹后方有个master的分支
+
+4. add项目并提交到本地仓库
+git add .
+git commit -m 'this is a local commit'
+5.为本地项目创建一个远端仓库
+git remote add origin https://github.com/leinov/xcxutil.git
+git remote add origin git@github.com:leinov/xcxutil.git //需要配置ssh key
+如果远端(gitee,github)没有仓库需要先创建一个空的仓库，
+
+6. 把远端代码拉到本地合并(这一步必须操作)
+git pull --rebase origin master
+执行后可以看到本地代码中多了README.md文件
+
+7. 把本地代码push到远端
+git push origin master
+
+8. 跟踪远程分支，可以直接用push和pull
+git branch --set-upstream-to=origin/master 
+
+9. 运行以下命令来设置默认分支名称为”main”（或其他你希望使用的名称）：
+
+git config –global init.defaultBranch main
+
+
+
+
+

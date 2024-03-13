@@ -1,0 +1,53 @@
+
+添加 .bashrc 配置
+安装结束后，python 和 conda 还不能正常使用，我们还需要配置 .bashrc 文件，我们用
+
+vim  ~/.bashrc
+
+打开 ~/.bashrc，在配置文件最后添加以下语句（如果已经有了就不需要更改了，如果没有打开后输入i, 进入编辑模式，粘贴下面语句，按Esc，并且输入:wq退出）：
+
+export PATH="/home/pi/miniconda3/bin:$PATH"
+
+配置完成后，我们将更新以下配置：
+
+source ~/.bashrc
+
+配置完成后，我们可以使用 python --version ，就可以看到这是我们的 Python 已经是 Python 3 版本了。
+
+
+
+
+
+
+
+
+
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+
+显示下载地址：
+conda config --set show_channel_urls yes
+
+替换源之后，我们需要使用
+
+conda update conda
+
+来升级 conda，之后使用conda create -n {你的环境名} python=版本号创建一个你的python环境
+
+conda create -n py36 python=3.6
+
+
+如果您希望在Miniconda中关闭默认的base环境，可以按照以下步骤操作：
+
+在终端中输入以下命令来禁用默认的base环境：
+
+conda config --set auto_activate_base false
+
+如果需要再次启用默认的base环境，则可以使用以下命令：
+
+conda config --set auto_activate_base true
+
+
+
+
