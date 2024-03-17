@@ -18,5 +18,6 @@ apt-mark unhold + 软件包
 dpkg -i + 软件包	//安装
 dpkg-deb -c + 软件包	//查看DEB包内容
 
-
+#网络管理
+nm-connection-editor
 
